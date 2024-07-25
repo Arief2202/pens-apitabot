@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 25, 2024 at 07:16 AM
+-- Generation Time: Jul 25, 2024 at 09:44 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -44,7 +44,7 @@ CREATE TABLE `jadwal_pakan` (
 CREATE TABLE `manual` (
   `id` int(255) NOT NULL,
   `mode` varchar(255) NOT NULL,
-  `is_run` int(255) NOT NULL,
+  `is_run` int(255) NOT NULL DEFAULT 0,
   `timestamp` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
