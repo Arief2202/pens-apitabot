@@ -2,11 +2,14 @@
     include "../koneksi.php";
     $hari = null;
     $jam = null;
+    $duration = null;
     if(isset($_GET['hari'])) $hari = $_GET['hari'];
     if(isset($_GET['jam'])) $jam = $_GET['jam'];
+    if(isset($_GET['duration'])) $duration = $_GET['duration'];
 
     if(isset($_POST['hari'])) $hari = $_POST['hari'];
     if(isset($_POST['jam'])) $jam = $_POST['jam'];
+    if(isset($_POST['duration'])) $duration = $_POST['duration'];
     
     if(isset($hari) && isset($jam)){
         $menit = explode(":", $jam)[1];
@@ -25,7 +28,7 @@
         $query = mysqli_query($koneksi, $sql);
         $result = mysqli_fetch_object($query);
         if(!$result){
-            $sql = "INSERT INTO `jadwal_pakan` (`id`, `hari`, `jam`, `menit`, `timestamp`) VALUES (NULL, '".$hari."', '".$jam."', '".$menit."',  current_timestamp());";
+            $sql = "INSERT INTO `jadwal_pakan` (`id`, `hari`, `jam`, `menit`, `duration`, `timestamp`) VALUES (NULL, '".$hari."', '".$jam."', '".$menit."', '".$duration."',  current_timestamp());";
             $query = mysqli_query($koneksi, $sql);
             var_dump($query);die;
         }
