@@ -38,6 +38,7 @@
             $data3flutter[$index]['id'] = $dt->id;
             $data3flutter[$index]['hari'] = $hari[$dt->hari];
             $data3flutter[$index]['jam'] = ($dt->jam<10?"0":"").$dt->jam.":".($dt->menit<10?"0":"").$dt->menit;
+            $data3flutter[$index]['duration'] = $dt->duration;
             $index++;
         }
         http_response_code(200);
